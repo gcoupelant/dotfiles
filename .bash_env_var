@@ -1,0 +1,2 @@
+# Terraform
+export TF_VAR_ssh_user=${USER}
