@@ -1,16 +1,47 @@
 # Dotfiles
 
-### Apps
+## Usage
 
-- fzf
-- gron
-- jq
-- python-yq
-- k9s
-- kubectx
-- kube-ps1
-- pyenv
-- pipenv
-- tldr
-- z
-- zplug
+### Install requirements
+
+These commands will install build dependencies, `ps`, `curl`, `file`, `git`, `podman` and `zsh`.
+```bash
+# Debian/Ubuntu
+sudo apt update
+sudo apt -y install build-essential procps curl file git podman zsh
+
+# RHEL/Fedora
+sudo dnf update
+sudo dnf -y groupinstall 'Development Tools'
+sudo dnf -y install procps-ng curl file git podman zsh
+```
+
+This script will install the latest Homebrew (see: https://docs.brew.sh/Installation)
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Clone this repository
+
+```bash
+mkdir -p ~/src/github.com/gcoupelant
+cd  ~/src/github.com/gcoupelant
+git clone git@github.com:gcoupelant/dotfiles.git
+cd dotfiles
+```
+
+### Install brew apps
+
+```bash
+xargs brew install < brew_apps.txt
+```
+
+### Stow dotfiles
+
+```bash
+stow -t ~ -vv bash
+stow -t ~ -vv git
+stow -t ~ -vv zsh
+# For WSL only
+stow -t ~ -vv wsl
+```

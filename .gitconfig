@@ -1,8 +1,0 @@
-[user]
-	name = gcoupelant
-	email = guillaume.coupelant@gmail.com
-[core]
-	excludesfile = /Users/gcoupelant/.gitignore_global
-	autocrlf = input
-[diff "sopsdiffer"]
-	textconv = sops -d

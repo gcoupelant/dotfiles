@@ -1,0 +1,10 @@
+[user]
+	name = Guillaume Coupelant
+	email = guillaume.coupelant@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[init]
+	defaultBranch = main
+[rebase]
+	autosquash = true
