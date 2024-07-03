@@ -42,6 +42,8 @@ xargs brew install < brew_apps.txt
 stow -t ~ -vv bash
 stow -t ~ -vv git
 stow -t ~ -vv zsh
+stow -t ~ -vv ssh
+
 # For WSL only
 stow -t ~ -vv wsl
 ```
