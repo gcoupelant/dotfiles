@@ -7,8 +7,7 @@
 
 source /etc/os-release
 
-local distro_name=$WSL_DISTRO_NAME
-local distro_release=$VERSION_ID
+local prompt_host=$([ ! -z "${WSL_DISTRO_NAME}" ] && echo "WSL-$WSL_DISTRO_NAME-$VERSION_ID" || echo "$HOSTNAME")
 
 ### Git [±master ▾●]
 
@@ -112,7 +111,7 @@ function get_prompt {
   (( spare_width = ${COLUMNS} - 1 ))
   prompt=" "
 
-  user_machine_size=${#${(%):-X %n @ WSL-${distro_name}-${distro_release}-}}
+  user_machine_size=${#${(%):-X %n @ ${prompt_host}-}}
   hour_size=${#${(%):-[%*]}}
 
   (( spare_width = ${spare_width} - (${user_machine_size} + ${hour_size}) ))
@@ -124,7 +123,7 @@ function get_prompt {
   prompt="%{$fg[blue]%}#%{$reset_color%} \
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$reset_color%}@ \
-%{$fg[green]%}WSL-$distro_name-$distro_release \
+%{$fg[green]%}$prompt_host \
 %{$reset_color%}\
 $prompt\
 %{[%*]%}\
