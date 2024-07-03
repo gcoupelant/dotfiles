@@ -1,6 +1,7 @@
 ansible
 fd
 fzf
+go@1.22
 gron
 httpie
 johanhaleby/kubetail/kubetail
