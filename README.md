@@ -4,7 +4,7 @@
 
 ### Install requirements
 
-These commands will install build dependencies, `ps`, `curl`, `file`, `git`, `podman` and `zsh`.
+These commands will install the required/important packages.
 ```bash
 # Debian/Ubuntu
 sudo apt update
