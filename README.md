@@ -16,7 +16,7 @@ sudo dnf -y groupinstall 'Development Tools'
 sudo dnf -y install procps-ng curl file git podman zsh
 ```
 
-This script will install the latest Homebrew (see: https://docs.brew.sh/Installation)
+This script will install the latest Homebrew (see: https://docs.brew.sh/Installation).
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
@@ -46,4 +46,12 @@ stow -t ~ -vv ssh
 
 # For WSL only
 stow -t ~ -vv wsl
+```
+
+### Extra
+
+#### SSH Config
+Make sure the ssh config directory exists (to prevent subsequent stow from creating a symlink instead).
+```bash
+mkdir -p ~/.ssh/config.d
 ```
