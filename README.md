@@ -50,6 +50,9 @@ stow -t ~ -vv wsl
 
 ### Extra
 
+#### WSL
+If using WSL, check the wiki page about the potential extra steps to do: https://github.com/gcoupelant/dotfiles/wiki/WSL
+
 #### SSH Config
 Make sure the ssh config directory exists (to prevent subsequent stow from creating a symlink instead).
 ```bash
