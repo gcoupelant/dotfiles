@@ -43,8 +43,13 @@ stow -t ~ -vv bash
 stow -t ~ -vv git
 stow -t ~ -vv zsh
 stow -t ~ -vv ssh
+```
 
-# For WSL only
+#### WSL
+
+This stow is only relevant if `interop.appendWindowsPath` is set to `false` in `/etc/wsl.conf` (see: https://learn.microsoft.com/en-us/windows/wsl/wsl-config#interop-settings)
+
+```bash
 stow -t ~ -vv wsl
 ```
 
