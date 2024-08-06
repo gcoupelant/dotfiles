@@ -102,32 +102,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.bash_env_var ] && source ~/.bash_env_var
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
-# kubectl
-# Lazy loading of kubectl completion
-export KUBECTL_USED=false
-export KUBE_PROMPT=""
-function kubectl() {
-    if [[ "$KUBECTL_USED" = false ]]; then
-        export KUBECTL_USED=true
-        # Kube PS1
-        source "$HOMEBREW_PREFIX/opt/kube-ps1/share/kube-ps1.sh"
-        export KUBE_PS1_PREFIX="\n🐳 "
-        export KUBE_PS1_SUFFIX=""
-        export KUBE_PS1_DIVIDER=" on "
-        export KUBE_PS1_SYMBOL_ENABLE=false
-        export KUBE_PS1_CTX_COLOR=blue
-        export KUBE_PS1_NS_COLOR=red
-        export KUBE_PROMPT='$(
-            kube_ps1 |
-            perl -pe "s/gke_(\S+)_(\S+)_(\S+) /[GKE] \1 \/ \3 %{%f%}in %{%F{cyan}%}\2%{%f%} /" |
-            perl -pe "s/arn:aws:eks:(\S+):(\S+):cluster\/(\S+) /[EKS] \3 %{%f%}in %{%F{cyan}%}\1%{%f%} /"
-        )'
-
-    fi
-
-    command kubectl "$@"
-}
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -138,21 +112,6 @@ export PATH="$HOME/bin:$PATH"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
-
-# Pipenv
-export PIPENV_VENV_IN_PROJECT=1
-function py_info(){
-    # Get Virtual Env
-    if [[ -n "$VIRTUAL_ENV" ]]; then
-        # Strip out the path and just leave the env name
-            py=$(python --version 2>&1)
-        echo "\n🐍 %{%F{green}%}$py%{%f%} on %{%F{magenta}%}${VIRTUAL_ENV##*/}%{%f%}"
-    fi
-}
-
-# Disable the default virtualenv prompt change and replace with custom one
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PROMPT='$(py_info)'$PROMPT
 
 # ZPlug
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
