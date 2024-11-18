@@ -31,9 +31,6 @@ if [[ -n "$WSLENV" ]]; then
     function clip { "$1" | clip.exe;}
 fi
 
-alias docker-compose="podman-compose"
-alias docker="podman"
-
 function h() { code  ~/src/github.com/gcoupelant/history/; }
 
 # App shorts

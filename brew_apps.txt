@@ -10,8 +10,6 @@ k9s
 kube-ps1
 kubectx
 pipenv
-podman
-podman-compose
 pyenv
 python@3.10
 python@3.11
