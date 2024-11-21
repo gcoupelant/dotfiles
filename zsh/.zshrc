@@ -98,14 +98,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
-[ -f ~/.bash_env_var ] && source ~/.bash_env_var
-[ -f ~/.bash_secrets ] && source ~/.bash_secrets
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -f ~/.bash_env_var ]] && source ~/.bash_env_var
+[[ -f ~/.bash_secrets ]] && source ~/.bash_secrets
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ -d "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    # If nvm is installed using Brew
+    [[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
+    [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+# dvm (for deno)
+[[ -d "$HOME/.dvm/bin" ]] && export PATH="$HOME/.dvm/bin:$PATH"
+
+# Pulumi
+[[ -d "$HOME/.pulumi/bin" ]] && export PATH="$HOME/.pulumi/bin:$PATH"
 
 # Bin
 export PATH="$HOME/bin:$PATH"

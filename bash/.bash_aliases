@@ -25,12 +25,6 @@ alias gcb="git checkout -b"
 # Homebrew
 alias bubu="brew update && brew upgrade"
 
-# WSL copy/paste
-if [[ -n "$WSLENV" ]]; then
-    alias paste="powershell.exe -command \"Get-Clipboard\""
-    function clip { "$1" | clip.exe;}
-fi
-
 function h() { code  ~/src/github.com/gcoupelant/history/; }
 
 # App shorts

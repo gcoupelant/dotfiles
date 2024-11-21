@@ -47,8 +47,6 @@ stow -t ~ -vv ssh
 
 #### WSL
 
-This stow is only relevant if `interop.appendWindowsPath` is set to `false` in `/etc/wsl.conf` (see: https://learn.microsoft.com/en-us/windows/wsl/wsl-config#interop-settings)
-
 ```bash
 stow -t ~ -vv wsl
 ```
