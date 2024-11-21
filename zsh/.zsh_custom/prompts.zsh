@@ -10,7 +10,7 @@ export KUBE_PS1_NS_COLOR=red
 export KUBE_PROMPT='$(
     kube_ps1 |
     perl -pe "s/gke_(\S+)_(\S+)_(\S+) /[GKE] \1 \/ \3 %{%f%}in %{%F{cyan}%}\2%{%f%} /" |
-    perl -pe "s/arn:aws:eks:(\S+):(\S+):cluster\/(\S+) /[EKS] \3 %{%f%}in %{%F{cyan}%}\1%{%f%} /"
+    perl -pe "s/arn:aws:eks:(\S+):(\S+):cluster\/(\S+) /[EKS] \3 %{%f%}in %{%F{cyan}%}\2 (\1)%{%f%} /"
 )'
 
 # Pipenv
@@ -19,7 +19,7 @@ function py_info(){
     # Get Virtual Env
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Strip out the path and just leave the env name
-            py=$(python --version 2>&1)
+        py=$(python --version 2>&1)
         echo "\n🐍 %{%F{green}%}$py%{%f%} on %{%F{magenta}%}${VIRTUAL_ENV##*/}%{%f%}"
     fi
 }
