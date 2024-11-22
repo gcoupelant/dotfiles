@@ -25,4 +25,4 @@ function py_info(){
 
 # Disable the default virtualenv prompt change and replace with custom one
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PROMPT='$(py_info)'$PROMPT
+export TOP_PROMPT='$(py_info)'

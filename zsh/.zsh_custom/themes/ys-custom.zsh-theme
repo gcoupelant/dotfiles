@@ -136,9 +136,12 @@ ${pwd_prompt}"
 function get_kube_prompt {
   print -rP ${KUBE_PROMPT}
 }
+function get_top_prompt {
+  print -rP ${TOP_PROMPT}
+}
 
 setopt prompt_subst
-PROMPT='$(get_kube_prompt)
+PROMPT='$(get_top_prompt)$(get_kube_prompt)
 $(get_prompt)
 ${cmd_prompt}'
 RPROMPT='%{$(echotc UP 1)%}$(git_prompt)%{$(echotc DO 1)%}'
