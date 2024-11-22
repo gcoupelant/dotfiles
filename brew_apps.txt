@@ -9,6 +9,7 @@ gron
 helm
 helmfile
 httpie
+jc
 johanhaleby/kubetail/kubetail
 jq
 k9s
