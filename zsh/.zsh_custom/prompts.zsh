@@ -14,7 +14,6 @@ export KUBE_PROMPT='$(
 )'
 
 # Pipenv
-export PIPENV_VENV_IN_PROJECT=1
 function py_info(){
     # Get Virtual Env
     if [[ -n "$VIRTUAL_ENV" ]]; then

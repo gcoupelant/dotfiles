@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.bash_env_var ]] && source ~/.bash_env_var
 [[ -f ~/.bash_secrets ]] && source ~/.bash_secrets
 
+# Pipenv
+export PIPENV_VENV_IN_PROJECT=1
+
 # nvm
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
