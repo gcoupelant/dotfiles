@@ -20,14 +20,6 @@ ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
-print_status() {
-  retVal=$?
-  if [[ $retVal -ne 0 ]]; then
-    echo "Exit code: ${retVal}"
-  fi
-}
-precmd_functions+=(print_status)
-
 git_info () {
   local ref
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \

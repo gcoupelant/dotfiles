@@ -1,3 +1,15 @@
+# Print status (error code)
+print_status() {
+retVal=$?
+if [[ $retVal -ne 0 ]]; then
+    echo "Exit code: ${retVal}"
+fi
+}
+# Make sure it's not added multiple times in case of re-sourcing for .zshrc
+if ! [[ " $precmd_functions " =~ .*\ print_status\ .* ]]; then
+  precmd_functions+=(print_status)
+fi
+
 # kubectl
 # Kube PS1
 source "$HOMEBREW_PREFIX/opt/kube-ps1/share/kube-ps1.sh"
