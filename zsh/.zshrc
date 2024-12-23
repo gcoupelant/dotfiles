@@ -127,6 +127,13 @@ export PATH="$HOME/bin:$PATH"
 # Go
 export PATH="$HOME/go/bin:$PATH"
 
+# https://github.com/gcoupelant/clone-helper
+if which clone-helper >/dev/null; then
+    function clone {
+        source <(clone-helper -q $@)
+    }
+fi
+
 # ZPlug
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
