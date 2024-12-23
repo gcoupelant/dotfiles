@@ -9,6 +9,12 @@ if [[ -n "$WSLENV" ]]; then
     export PATH="/mnt/c/Users/$USER/bin:$PATH"
   fi
 
+  # Keep the current path when duplicating a pane/tab
+  keep_current_path() {
+    printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+  }
+  precmd_functions+=(keep_current_path)
+
   # 1Password CLI
   if [[ -d "/mnt/c/Users/$USER/AppData/Local/Microsoft/WinGet/Packages" ]]; then
     if [[ ! -z $(find /mnt/c/Users/$USER/AppData/Local/Microsoft/WinGet/Packages -name op.exe) ]]; then
