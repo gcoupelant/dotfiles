@@ -68,7 +68,12 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf git kubectl)
+plugins=(fzf fzf-tab git kubectl)
+
+# Add zsh-completions to fpath
+if [[ -d "${ZSH_CUSTOM}/plugins/zsh-completions/src" ]]; then
+    fpath+=${ZSH_CUSTOM}/plugins/zsh-completions/src
+fi
 
 source $ZSH/oh-my-zsh.sh
 

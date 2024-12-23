@@ -36,6 +36,13 @@ cd dotfiles
 xargs brew install < brew_apps.txt
 ```
 
+### Install ZSH plugins
+
+```bash
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM}/plugins/fzf-tab
+```
+
 ### Stow dotfiles
 
 ```bash
