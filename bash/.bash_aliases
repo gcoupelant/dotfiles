@@ -25,9 +25,17 @@ alias gcb="git checkout -b"
 # Homebrew
 alias bubu="brew update && brew upgrade"
 
-function h() { code  ~/src/github.com/gcoupelant/history/; }
-
 # App shorts
+function c() {
+    repo_dir=$(git rev-parse --show-toplevel 2>/dev/null)
+
+    if ! [ $? -eq 0 ]; then
+        repo_dir=$(pwd)
+    fi
+
+    echo "code $repo_dir"
+    code "$repo_dir"
+}
 alias k="kubectl"
 alias kctx="kubectx"
 alias kns="kubens"
