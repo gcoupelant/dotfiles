@@ -100,7 +100,8 @@ local cmd_prompt="%{$fg[red]%}$ %{$reset_color%}"
 # return_code="%(?..C:%{$fg[red]%}%?%{$reset_color%})"
 
 function get_prompt {
-  (( spare_width = ${COLUMNS} - 1 ))
+  # (( spare_width = ${COLUMNS} - 1 )) Only if using Emoji
+  (( spare_width = ${COLUMNS} ))
   prompt=" "
 
   user_machine_size=${#${(%):-X %n @ ${prompt_host}-}}
