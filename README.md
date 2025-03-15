@@ -59,13 +59,6 @@ Then install all the brew apps.
 xargs brew install < brew_apps.txt
 ```
 
-## Install ZSH plugins
-
-```bash
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM}/plugins/fzf-tab
-```
-
 ## Stow dotfiles
 
 First, delete the `.zshrc` file that was created during `zsh`'s installation:
@@ -89,7 +82,13 @@ Finally, reload `zsh` by running:
 source ~/.zshrc
 ```
 
-You will be prompted to install plugins, simply reply `y` when asked.
+You will be prompted to install ZPlug packages, simply reply `y` when asked.
+
+You can now install the following ZSH plugins:
+```bash
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM}/plugins/zsh-completions
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM}/plugins/fzf-tab
+```
 
 ## Extra
 
