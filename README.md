@@ -55,10 +55,10 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 Then install all the brew apps:
 ```bash
-xargs brew install < brew_apps.txt
+./brew.sh
 
 # If using MacOS
-[[ "$(uname)" == "Darwin" ]] && xargs brew install < brew_apps_macos.txt
+[[ "$(uname)" == "Darwin" ]] && ./brew-macos.sh
 ```
 
 ## Stow dotfiles

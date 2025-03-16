@@ -1,7 +1,0 @@
-findutils
-gnu-indent
-gnu-sed
-gnutls
-grep
-gnu-tar
-gawk
