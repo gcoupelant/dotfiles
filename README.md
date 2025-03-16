@@ -61,9 +61,10 @@ xargs brew install < brew_apps.txt
 
 ## Stow dotfiles
 
-First, delete the `.zshrc` file that was created during `zsh`'s installation:
+First, delete the `.zshrc` file that was created during `zsh`'s installation and make sure the ssh config directory exists (to prevent subsequent stow from creating a symlink instead):
 ```bash
 rm ~/.zshrc
+mkdir -p ~/.ssh/config.d
 ```
 
 Then apply the stow.
@@ -100,9 +101,3 @@ sudo locale-gen en_US en_US.UTF-8
 
 ### WSL
 If using WSL, check the wiki page about the potential extra steps to do: https://github.com/gcoupelant/dotfiles/wiki/WSL
-
-### SSH Config
-Make sure the ssh config directory exists (to prevent subsequent stow from creating a symlink instead).
-```bash
-mkdir -p ~/.ssh/config.d
-```
