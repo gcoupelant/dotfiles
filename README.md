@@ -53,10 +53,12 @@ First, run the following command to have brew temporarily available (the `.zshrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ```
 
-Then install all the brew apps.
-
+Then install all the brew apps:
 ```bash
 xargs brew install < brew_apps.txt
+
+# If using MacOS
+[[ "$(uname)" == "Darwin" ]] && xargs brew install < brew_apps_macos.txt
 ```
 
 ## Stow dotfiles
