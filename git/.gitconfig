@@ -8,3 +8,8 @@
 	defaultBranch = main
 [rebase]
 	autosquash = true
+
+# If this file is missing, git silently ignore it.
+[include]
+	# Allows specific WSL and SSH config.
+	path = ~/.gitconfig_wsl_ssh

@@ -103,3 +103,15 @@ sudo locale-gen en_US en_US.UTF-8
 
 ### WSL
 If using WSL, check the wiki page about the potential extra steps to do: https://github.com/gcoupelant/dotfiles/wiki/WSL
+
+#### Host's SSH client (for 1Password SSH Agent)
+
+To use the [1Password SSH Agent with WSL](https://developer.1password.com/docs/ssh/integrations/wsl/), you need to use the Windows' host `ssh.exe` program instead of Linux's native `ssh`. This can be done by running this stow:
+
+```bash
+stow -t ~ -vv wsl-ssh
+```
+
+This will configure `git` to use `ssh.exe` (if using this repository's [`.gitconfig`](git/.gitconfig#L15) file) and create this alias: `ssh="ssh.exe"`.
+
+> This will prevent any keys present in `~/.ssh` to be used.
