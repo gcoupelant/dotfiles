@@ -7,7 +7,10 @@
 
 source /etc/os-release
 
-local prompt_host=$([ ! -z "${WSL_DISTRO_NAME}" ] && echo "WSL-$WSL_DISTRO_NAME-$VERSION_ID" || echo "$HOSTNAME")
+local prompt_host=$(echo "$(hostname)")
+local prompt_host_wsl_prefix=$([ ! -z "${WSL_DISTRO_NAME}" ] && echo " [WSL:" || echo "")
+local prompt_host_wsl=$([ ! -z "${WSL_DISTRO_NAME}" ] && echo "${WSL_DISTRO_NAME}-${VERSION_ID}" || echo "")
+local prompt_host_wsl_suffix=$([ ! -z "${WSL_DISTRO_NAME}" ] && echo "]" || echo "")
 
 ### Git [±master ▾●]
 
@@ -104,7 +107,7 @@ function get_prompt {
   (( spare_width = ${COLUMNS} ))
   prompt=" "
 
-  user_machine_size=${#${(%):-X %n @ ${prompt_host}-}}
+  user_machine_size=${#${(%):-X %n @ ${prompt_host}${prompt_host_wsl_prefix}${prompt_host_wsl}${prompt_host_wsl_suffix}-}}
   hour_size=${#${(%):-[%*]}}
 
   (( spare_width = ${spare_width} - (${user_machine_size} + ${hour_size}) ))
@@ -116,7 +119,7 @@ function get_prompt {
   prompt="%{$fg[blue]%}#%{$reset_color%} \
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$reset_color%}@ \
-%{$fg[green]%}$prompt_host \
+%{$fg[green]%}$prompt_host%{$reset_color%}$prompt_host_wsl_prefix%{$fg[blue]%}$prompt_host_wsl%{$reset_color%}$prompt_host_wsl_suffix \
 %{$reset_color%}\
 $prompt\
 %{[%*]%}\
