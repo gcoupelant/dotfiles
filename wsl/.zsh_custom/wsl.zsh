@@ -34,14 +34,4 @@ if [[ -n "$WSLENV" ]]; then
   if [[ -s "/usr/bin/wslview" ]]; then
     export BROWSER=/usr/bin/wslview
   fi
-
-  # Explicitly set bindkey for (ctrl-)alt-right/left arrows on WSL
-  # [Alt-RightArrow] - move forward one word
-  bindkey "^[[1;3C" forward-word
-  # [Alt-LeftArrow] - move backward one word
-  bindkey "^[[1;3D" backward-word
-  # [Ctrl-Alt-RightArrow] - move forward one word
-  bindkey "^[[1;7C" forward-word
-  # [Ctrl-Alt-LeftArrow] - move backward one word
-  bindkey "^[[1;7D" backward-word
 fi
