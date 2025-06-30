@@ -12,7 +12,7 @@ fi
 
 # kubectl
 # Kube PS1
-source "$HOMEBREW_PREFIX/opt/kube-ps1/share/kube-ps1.sh"
+source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh"
 export KUBE_PS1_PREFIX="\n🐳 "
 export KUBE_PS1_SUFFIX=""
 export KUBE_PS1_DIVIDER=" on "
