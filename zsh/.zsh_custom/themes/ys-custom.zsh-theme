@@ -5,7 +5,7 @@
 #
 # Mar 2013 Yad Smood
 
-source /etc/os-release
+[[ -f ~/etc/os-release ]] && source /etc/os-release
 
 local prompt_host=$(echo "$(hostname)")
 local prompt_host_wsl_prefix=$([ ! -z "${WSL_DISTRO_NAME}" ] && echo " [WSL:" || echo "")
