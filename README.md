@@ -63,10 +63,11 @@ Then install all the brew apps:
 
 ## Stow dotfiles
 
-First, delete the `.zshrc` file that was created during `zsh`'s installation and make sure the ssh config directory exists (to prevent subsequent stow from creating a symlink instead):
+First, delete the `.zshrc` file that was created during `zsh`'s installation and make sure the `.ssh` amd `.zsh_custom` directories exist (to prevent subsequent stow from creating a symlink instead):
 ```bash
 rm ~/.zshrc
 mkdir -p ~/.ssh/config.d
+mkdir -p ~/.zsh_custom
 ```
 
 Then apply the stow.
