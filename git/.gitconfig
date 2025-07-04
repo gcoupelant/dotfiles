@@ -13,3 +13,5 @@
 [include]
 	# Allows specific WSL and SSH config.
 	path = ~/.gitconfig_wsl_ssh
+	# Allows an extra config file. For example if using another dotfiles repo in parallel to this one.
+	path = ~/.gitconfig_extra
