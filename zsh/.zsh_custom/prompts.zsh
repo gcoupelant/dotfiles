@@ -25,6 +25,20 @@ export KUBE_PROMPT='$(
     perl -pe "s/arn:aws:eks:(\S+):(\S+):cluster\/(\S+) /[EKS] \3 %{%f%}in %{%F{cyan}%}\2 (\1)%{%f%} /"
 )'
 
+# Check if DISABLE_KUBE_PS1_UNTIL_KUBECTL is set to "true". If yes, disable kube-ps1 until kubectl is used
+if [[  "$DISABLE_KUBE_PS1_UNTIL_KUBECTL" = "true" ]]; then
+    # Hide kube-ps1 first
+    kubeoff
+    # Wrap kubectl to enable kube-ps1 on the first run
+    kubectl() {
+        if [[ -z "$_KUBECTL_USED" ]]; then
+            kubeon
+            export _KUBECTL_USED=true
+        fi
+        command kubectl "$@"  # Call the real kubectl command
+    }
+fi
+
 # Pipenv
 function py_info(){
     # Get Virtual Env
