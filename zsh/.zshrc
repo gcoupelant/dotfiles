@@ -126,6 +126,9 @@ fi
 # Pulumi
 [[ -d "$HOME/.pulumi/bin" ]] && export PATH="$HOME/.pulumi/bin:$PATH"
 
+# .local/bin
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+
 # Bin
 export PATH="$HOME/bin:$PATH"
 
@@ -163,3 +166,5 @@ FZ_SUBDIR_CMD=ff
 
 # ZPlug load
 zplug load
+
+. "$HOME/.local/bin/env"
