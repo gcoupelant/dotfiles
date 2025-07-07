@@ -110,6 +110,14 @@ source $ZSH/oh-my-zsh.sh
 # Pipenv
 export PIPENV_VENV_IN_PROJECT=1
 
+# pyenv
+if [[ -d "$HOME/.pyenv" ]]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init - zsh)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # nvm
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
@@ -125,6 +133,9 @@ fi
 
 # Pulumi
 [[ -d "$HOME/.pulumi/bin" ]] && export PATH="$HOME/.pulumi/bin:$PATH"
+
+# .local/bin
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
 
 # Bin
 export PATH="$HOME/bin:$PATH"
