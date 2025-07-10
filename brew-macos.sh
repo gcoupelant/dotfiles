@@ -20,3 +20,5 @@ brew install findutils \
     grep \
     gnu-tar \
     gawk
+
+brew install watch
