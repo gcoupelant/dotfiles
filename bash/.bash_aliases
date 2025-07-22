@@ -27,6 +27,12 @@ alias bubu="brew update && brew upgrade"
 
 # App shorts
 function c() {
+    # If there are arguments, fail the function
+    if [ "$#" -gt 0 ]; then
+        echo "Error: do not pass arguments to \"c\""
+        return 1
+    fi
+
     repo_dir=$(git rev-parse --show-toplevel 2>/dev/null)
 
     if ! [ $? -eq 0 ]; then
