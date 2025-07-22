@@ -128,6 +128,13 @@ if [[ -d "$HOME/.nvm" ]]; then
     [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # dvm (for deno)
 [[ -d "$HOME/.dvm/bin" ]] && export PATH="$HOME/.dvm/bin:$PATH"
 
