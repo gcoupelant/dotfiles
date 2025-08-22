@@ -1,6 +1,8 @@
 brew install ansible \
     ca-certificates \
     curl \
+    docker \
+    docker-compose \
     fd \
     fzf \
     go \
