@@ -181,3 +181,7 @@ FZ_SUBDIR_CMD=ff
 
 # ZPlug load
 zplug load
+
+# Completion
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit
