@@ -121,11 +121,26 @@ fi
 # nvm
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
-    [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    # If nvm is installed using Brew
-    [[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
-    [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+    # Lzy-loading function for nvm
+    nvm() {
+        # Remove the placeholder function
+        unset -f nvm
+
+        if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+            \. "$NVM_DIR/nvm.sh"
+        elif [[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]]; then
+            \. "$(brew --prefix)/opt/nvm/nvm.sh"
+        fi
+
+        if [[ -s "$NVM_DIR/bash_completion" ]]; then
+            \. "$NVM_DIR/bash_completion"
+        elif [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]]; then
+            \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
+        fi
+
+        nvm "$@"
+    }
 fi
 
 # pnpm
