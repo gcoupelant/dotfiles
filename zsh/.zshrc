@@ -122,11 +122,8 @@ fi
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
 
-    # Lzy-loading function for nvm
-    nvm() {
-        # Remove the placeholder function
-        unset -f nvm
-
+    # Function to load nvm
+    _load_nvm() {
         if [[ -s "$NVM_DIR/nvm.sh" ]]; then
             \. "$NVM_DIR/nvm.sh"
         elif [[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]]; then
@@ -138,8 +135,21 @@ if [[ -d "$HOME/.nvm" ]]; then
         elif [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]]; then
             \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
         fi
+    }
 
+    # Lazy-loading function for nvm
+    nvm() {
+        unset -f nvm claude
+        _load_nvm
         nvm "$@"
+    }
+
+    # Lazy-loading function for claude (which is installed with nvm/node)
+    claude() {
+        unset -f nvm claude
+        _load_nvm
+        nvm use default >/dev/null 2>&1 || nvm use node >/dev/null 2>&1
+        command claude "$@"
     }
 fi
 
