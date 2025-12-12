@@ -1,6 +1,7 @@
 [user]
 	name = Guillaume Coupelant
 	email = guillaume.coupelant@gmail.com
+	signingkey = ~/.ssh/id_rsa.pub
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
@@ -8,6 +9,10 @@
 	defaultBranch = main
 [rebase]
 	autosquash = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
 
 # If this file is missing, git silently ignore it.
 [include]
