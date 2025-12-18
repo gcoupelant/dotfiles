@@ -1,0 +1,5 @@
+# If any of these files are missing, git silently ignore it.
+[include]
+	# Sign commits using 1Password
+	path = ~/.gitconfig_signing_ssh_1p
+	path = ~/.gitconfig_signing_key

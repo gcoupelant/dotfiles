@@ -1,0 +1,8 @@
+[user]
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNQO9akyEDGfmfLGJz3JFjpK2Y8dDLBkFc91AZ1Qh05nWagRbW2ijSvCPV7AqZcrakNm+Bg1aY4uLCheR9e4Bh2+HOdvro2H1g1a3+h3P3DhnWdPHlVvX7VNI7bve7prF6FqVwwA1dT4HrGEIopGU3Ex79YyiHe0gdS4bKvWOWrbnDxe6nM8ZdfVjuUN8JA4hRk+th8f+upHVjQ97L22Y8eCJyT4800njXL8E+zohtGrpYEPSN+++POBkqApULI1r8iJB74ql57tQuHq0BYt8XdljFMjpuyqXgGNuDv2/iSQb16OtUaZRPPbWOq6U7E9GcZm9NrzGNjzBtBnTDmekT
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true

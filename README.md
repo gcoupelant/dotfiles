@@ -92,6 +92,11 @@ stow -t ~ -vv ssh
 [[ -n $WSLENV ]] && stow -t ~ -vv wsl
 ```
 
+```bash
+# To use 1Password on MacOS for ssh auth and git signing
+stow -t ~ -vv 1p-macos
+```
+
 Finally, reload `zsh` by running:
 
 ```bash
