@@ -13,15 +13,15 @@ systemd=true
 
 ### Interop
 
-If you get issues with interoperability with `systemd` enabled, you can try this solution: https://github.com/microsoft/WSL/issues/8843#issuecomment-1337127239
+If you get issues with interoperability with `systemd` enabled, you can try this solution: <https://github.com/microsoft/WSL/issues/8843#issuecomment-1337127239>
 
-This has been fixed with https://github.com/microsoft/WSL/releases/tag/2.5.1.
+This has been fixed with <https://github.com/microsoft/WSL/releases/tag/2.5.1>.
 
 ## DNS
 
-When using Fedora (from https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL), there's a misconfigured systemd-resolved setting:
+When using Fedora (from <https://github.com/WhitewaterFoundry/Fedora-Remix-for-WSL>), there's a misconfigured systemd-resolved setting:
 
-In `/etc/systemd/resolved.conf`, the `Cache` entry should be set to `no-negative` to avoid issues with empty DNS responses being cached (see: https://www.hydrogen18.com/blog/preventing-systemd-from-caching-non-existent-domains.html)
+In `/etc/systemd/resolved.conf`, the `Cache` entry should be set to `no-negative` to avoid issues with empty DNS responses being cached (see: <https://www.hydrogen18.com/blog/preventing-systemd-from-caching-non-existent-domains.html>)
 
 ## Host's SSH client (for 1Password SSH Agent)
 
