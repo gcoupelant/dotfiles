@@ -13,7 +13,6 @@ brew install ansible \
     helmfile \
     httpie \
     jc \
-    johanhaleby/kubetail/kubetail \
     jq \
     k9s \
     kube-ps1 \
