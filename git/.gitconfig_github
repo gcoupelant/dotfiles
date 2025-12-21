@@ -2,4 +2,3 @@
 [include]
 	# Sign commits using 1Password
 	path = ~/.gitconfig_signing_ssh_1p
-	path = ~/.gitconfig_signing_key
