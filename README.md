@@ -124,4 +124,8 @@ sudo locale-gen en_US en_US.UTF-8
 
 ### Extra steps
 
-Check [MACOS.md](docs/MACOS.md) and [WSL.md](docs/WSL.md) about the potential extra steps to do.
+You might want to check out [clone-helper](https://github.com/gcoupelant/clone-helper).
+
+#### OS Specific
+
+Check [MACOS.md](docs/MACOS.md) and [WSL.md](docs/WSL.md) about potential extra steps to do.
