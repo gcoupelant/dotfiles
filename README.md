@@ -66,7 +66,7 @@ Then install all the brew apps:
 brew bundle
 
 # If using MacOS
-[[ "$(uname)" == "Darwin" ]] && brew bundle --file=Brewfile.macos
+brew bundle --file=Brewfile.macos
 ```
 
 ## Stow dotfiles
