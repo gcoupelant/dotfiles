@@ -71,10 +71,11 @@ brew bundle --file=Brewfile.macos
 
 ## Stow dotfiles
 
-First, delete the `.zshrc` file that was created during `zsh`'s installation and make sure the `.ssh`, `.zsh_custom` and `.zsh/completion` directories exist (to prevent subsequent stow from creating a symlink instead):
+First, delete the `.zshrc` file that was created during `zsh`'s installation and make sure the `~/bin`, `~/.ssh`, `~/.zsh_custom` and `~/.zsh/completion` directories exist (to prevent subsequent stow from creating a symlink instead):
 
 ```bash
 rm ~/.zshrc
+mkdir ~/bin
 mkdir -p ~/.ssh/config.d
 mkdir -p ~/.zsh_custom
 mkdir -p ~/.zsh/completion
@@ -113,6 +114,12 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM}/plugins/fzf-tab
 ```
 
 ## Extra
+
+The `.zshrc` adds `~/bin` to the PATH, make sure that directory exists if you want to use it:
+
+```bash
+mkdir ~/bin
+```
 
 ### Locales
 
