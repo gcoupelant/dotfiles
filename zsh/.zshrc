@@ -119,7 +119,8 @@ if [[ -d "$HOME/.pyenv" ]]; then
 fi
 
 # nvm
-if [[ -d "$HOME/.nvm" ]]; then
+# ~/.nvm will not exist until `nvm` is invocated at least once
+if [[ -d "$HOME/.nvm" ]] || [[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]]; then
     export NVM_DIR="$HOME/.nvm"
 
     # Function to load nvm
@@ -139,17 +140,9 @@ if [[ -d "$HOME/.nvm" ]]; then
 
     # Lazy-loading function for nvm
     nvm() {
-        unset -f nvm claude
+        unset -f nvm
         _load_nvm
         nvm "$@"
-    }
-
-    # Lazy-loading function for claude (which is installed with nvm/node)
-    claude() {
-        unset -f nvm claude
-        _load_nvm
-        nvm use default >/dev/null 2>&1 || nvm use node >/dev/null 2>&1
-        command claude "$@"
     }
 fi
 
