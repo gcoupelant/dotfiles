@@ -18,6 +18,7 @@ brew install ansible \
     kube-ps1 \
     kubectx \
     kubetail \
+    ncdu \
     nvm \
     pipenv \
     pyenv \

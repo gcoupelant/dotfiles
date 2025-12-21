@@ -22,3 +22,6 @@ brew install findutils \
     gawk
 
 brew install watch
+
+# Lima for docker
+brew install lima
