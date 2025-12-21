@@ -63,10 +63,10 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 Then install all the brew apps:
 
 ```bash
-./brew.sh
+brew bundle
 
 # If using MacOS
-[[ "$(uname)" == "Darwin" ]] && ./brew-macos.sh
+[[ "$(uname)" == "Darwin" ]] && brew bundle --file=Brewfile.macos
 ```
 
 ## Stow dotfiles

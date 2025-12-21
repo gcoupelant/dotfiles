@@ -1,0 +1,28 @@
+# macOS-specific Homebrew packages
+
+# Install wget with IRI support
+brew "wget"
+
+# Install GnuPG to enable PGP-signing commits
+brew "gnupg"
+
+# Install more recent versions of some macOS tools
+brew "vim"
+brew "grep"
+brew "openssh"
+brew "screen"
+brew "php"
+brew "gmp"
+
+# GNU replacements
+brew "findutils"
+brew "gnu-indent"
+brew "gnu-sed"
+brew "gnutls"
+brew "gnu-tar"
+brew "gawk"
+
+brew "watch"
+
+# Lima for docker
+brew "lima"
