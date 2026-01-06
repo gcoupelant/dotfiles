@@ -17,3 +17,11 @@ defaults delete com.apple.dock autohide-delay
 defaults delete com.apple.dock autohide-time-modifier
 killall Dock
 ```
+
+## TouchID for `sudo`
+
+If you want to get prompted for TouchID when using `sudo` (instead of having to type your password), you can run the following command:
+
+```bash
+sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+```
