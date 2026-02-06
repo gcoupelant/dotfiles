@@ -33,6 +33,8 @@ This script will install the latest Oh My Zsh (see: <https://ohmyz.sh/#install>)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+After this step, please reload your terminal to use `zsh`.
+
 ## Brew
 
 This script will install the latest Homebrew (see: <https://docs.brew.sh/Installation>).
@@ -40,8 +42,6 @@ This script will install the latest Homebrew (see: <https://docs.brew.sh/Install
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-After this step, please reload your terminal to use `zsh`.
 
 ## Clone this repository
 
