@@ -133,6 +133,18 @@ sudo locale-gen en_US en_US.UTF-8
 
 You might want to check out [clone-helper](https://github.com/gcoupelant/clone-helper).
 
+#### Docker BuildKit (buildx)
+
+Since `docker-buildx` is installed using Homebrew, `~/.docker/config.json` needs to be updated to use it as a plugin:
+
+```bash
+mkdir -p ~/.docker && \
+[ ! -f ~/.docker/config.json ] && echo '{}' > ~/.docker/config.json
+
+jq --arg dir "/opt/homebrew/lib/docker/cli-plugins" '.cliPluginsExtraDirs = [$dir]' ~/.docker/config.json > /tmp/docker-config.json && \
+mv /tmp/docker-config.json ~/.docker/config.json
+```
+
 #### OS Specific
 
 Check [MACOS.md](docs/MACOS.md) and [WSL.md](docs/WSL.md) about potential extra steps to do.
