@@ -70,4 +70,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # Claude
-.claude
+.claude/settings.local.json
