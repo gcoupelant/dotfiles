@@ -26,3 +26,7 @@ brew "watch"
 
 # Lima for docker
 brew "lima"
+
+cask "1password-cli"
+cask "stats"
+cask "wezterm"
