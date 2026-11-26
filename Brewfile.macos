@@ -26,7 +26,11 @@ brew "watch"
 
 # Lima for docker
 brew "lima"
+brew "vde"
 
 cask "1password-cli"
+cask "bentobox"
+cask "catch"
+cask "jordanbaird-ice"
 cask "stats"
 cask "wezterm"
